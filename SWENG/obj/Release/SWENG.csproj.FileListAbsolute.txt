@@ -1,0 +1,6 @@
+C:\Users\veres\source\repos\SWENG\SWENG\obj\Release\SWENG.csprojAssemblyReference.cache
+C:\Users\veres\source\repos\SWENG\SWENG\obj\Release\SWENG.exe.config
+C:\Users\veres\source\repos\SWENG\SWENG\obj\Release\MainWindow.g.cs
+C:\Users\veres\source\repos\SWENG\SWENG\obj\Release\App.g.cs
+C:\Users\veres\source\repos\SWENG\SWENG\obj\Release\SWENG_MarkupCompile.cache
+C:\Users\veres\source\repos\SWENG\SWENG\obj\Release\SWENG_MarkupCompile.lref

@@ -1,0 +1,31 @@
+﻿<Application x:Class="SWENG.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SWENG"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <Color x:Key="SuzukiBlue" A="255" R="8" G="80" B="118"/>
+            <Color x:Key="SuzukiRed" A="255" R="226" G="14" B="16"/>
+            <Color x:Key="White" A="255" R="255" G="255" B="255"/>
+            
+            <SolidColorBrush x:Key="Primary" Color="DarkGreen"/>
+            <SolidColorBrush x:Key="Secondary" Color="{DynamicResource SuzukiRed}"/>
+            <SolidColorBrush x:Key="Third" Color="{DynamicResource White}"/>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml"/>
+                <!-- Accent and AppTheme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Green.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
