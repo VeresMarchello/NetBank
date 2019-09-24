@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SWENG
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for FamilyPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class FamilyPage : Page
     {
-        public MainPage()
+        public FamilyPage()
         {
             InitializeComponent();
         }

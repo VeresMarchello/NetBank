@@ -9,7 +9,7 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:h="http://helix-toolkit.org/wpf"
-        Title="BANK" Height="792.1" Width="1463.333"
+        Title="Net Bank" Height="792.1" Width="1463.333"
         WindowTitleBrush="{DynamicResource Primary}"                      
         BorderThickness="0"
         WindowStartupLocation="CenterScreen" SizeToContent="Width">
@@ -109,26 +109,25 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="0,106,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" Click="MainMenu_Click" HorizontalAlignment="Left" Width="200" Focusable="False">
+                <Button Margin="0,106,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="HomeMenu_Click">
                     <Grid Width="190" Height="26">
                         <materialDesign:PackIcon Kind="Home" VerticalAlignment="Center" Margin="10,-3,0,0" Height="29" Width="29"/>
                         <TextBlock HorizontalAlignment="Right" Text="Kezdőlap" FontSize="17" FontFamily="Champagne &amp; Limousines" Margin="0,6,56,-2" RenderTransformOrigin="1.221,0.667" Width="76"/>
                     </Grid>
                 </Button>
-                <Button Margin="0,147,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" Click="WrongMenu_Click" HorizontalAlignment="Left" Width="200" Focusable="False">
+                <Button Margin="0,147,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="TransfersMenu_Click">
                     <Grid Width="190" Height="33">
                         <materialDesign:PackIcon Kind="Dollar" VerticalAlignment="Center" Margin="10,2,0,2" Height="29" Width="29"/>
                         <TextBlock HorizontalAlignment="Left" FontSize="17" Text="Utalások" FontFamily="Champagne &amp; Limousines" Margin="58,10,0,2" RenderTransformOrigin="1.221,0.667" Width="77"/>
                     </Grid>
                 </Button>
-                <Button Margin="0,188,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" Click="MissingMenu_Click" HorizontalAlignment="Left" Width="200" Focusable="False">
+                <Button Margin="0,188,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="FamilyMenu_Click">
                     <Grid Width="190" Height="33">
-
                         <materialDesign:PackIcon Kind="Family" VerticalAlignment="Center" Height="29" Width="30" Margin="10,0,0,4"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="17" Text="Család" FontFamily="Champagne &amp; Limousines" Margin="58,10,66,6" RenderTransformOrigin="1.221,0.667" Width="66"/>
                     </Grid>
                 </Button>
-                <Button Margin="0,224,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="EcnMenu_Click">
+                <Button Margin="0,224,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="HistoryMenu_Click">
                     <Grid Width="190" Height="31">
                         <materialDesign:PackIcon Kind="History" VerticalAlignment="Center" Margin="10,2,0,0" Height="29" Width="29"/>
                         <TextBlock HorizontalAlignment="Center" FontSize="17" Text="Számlatörténet" FontFamily="Champagne &amp; Limousines" Margin="58,10,0,1" RenderTransformOrigin="1.221,0.667" Width="132"/>
@@ -141,17 +140,14 @@
                     </Grid>
                 </Button>
 
-                <Button Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Foreground="{DynamicResource Third}"   HorizontalAlignment="Left" Width="51" Focusable="False" VerticalAlignment="Bottom">
-                    <!--<Grid Width="190" Height="28">-->
+                <Button Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Foreground="{DynamicResource Third}"   HorizontalAlignment="Left" Width="51" Focusable="False" VerticalAlignment="Bottom" Click="LogoutButton_Click">
                     <materialDesign:PackIcon Kind="Logout" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44" Width="50"/>
-                    <!--<TextBlock HorizontalAlignment="Center" FontSize="17" Text="Kilépés" FontFamily="Champagne &amp; Limousines" Margin="58,5,26,5" RenderTransformOrigin="1.221,0.667" Width="106"/>-->
-                    <!--</Grid>-->
                 </Button>
 
             </Grid>
 
             <Grid Grid.Column="1">
-                <Frame Source="MainPage.xaml" x:Name="_NavigationFrame" Background="{DynamicResource Third}" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" MinHeight="310" ScrollViewer.CanContentScroll="True" />
+                <Frame Source="HomePage.xaml" x:Name="_NavigationFrame" Background="{DynamicResource Third}" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" NavigationUIVisibility="Hidden" MinHeight="310" ScrollViewer.CanContentScroll="True" />
             </Grid>
         </Grid>
     </Grid>

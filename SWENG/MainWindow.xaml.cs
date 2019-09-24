@@ -27,29 +27,36 @@ namespace SWENG
             InitializeComponent();
         }
 
-        private void MainMenu_Click(object sender, RoutedEventArgs e)
+        private void HomeMenu_Click(object sender, RoutedEventArgs e)
         {
-            //_NavigationFrame.Navigate(new MainPage());
+            _NavigationFrame.Navigate(new HomePage());
+        }
+
+        private void TransfersMenu_Click(object sender, RoutedEventArgs e)
+        {
+            _NavigationFrame.Navigate(new TransfersPage());
+        }
+
+        private void FamilyMenu_Click(object sender, RoutedEventArgs e)
+        {
+            _NavigationFrame.Navigate(new FamilyPage());
+        }
+
+        private void HistoryMenu_Click(object sender, RoutedEventArgs e)
+        {
+            _NavigationFrame.Navigate(new HistoryPage());
         }
 
         private void SettingsMenu_Click(object sender, RoutedEventArgs e)
         {
-            //_NavigationFrame.Navigate(new SettingsPage());
+            _NavigationFrame.Navigate(new SettingsPage());
         }
 
-        private void MissingMenu_Click(object sender, RoutedEventArgs e)
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            //_NavigationFrame.Navigate(new MissingPage());
-        }
-
-        private void WrongMenu_Click(object sender, RoutedEventArgs e)
-        {
-            //_NavigationFrame.Navigate(new WrongPage());
-        }
-
-        private void EcnMenu_Click(object sender, RoutedEventArgs e)
-        {
-            //_NavigationFrame.Navigate(new EcnPage());
+            LoginWindow window = new LoginWindow();
+            window.Show();
+            this.Close();
         }
 
         bool StateClosed = false;
@@ -69,5 +76,7 @@ namespace SWENG
 
             StateClosed = !StateClosed;
         }
+
+        
     }
 }
