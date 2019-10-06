@@ -12,7 +12,7 @@
         Title="Net Bank" Height="792.1" Width="1463.333"
         WindowTitleBrush="{DynamicResource Primary}"                      
         BorderThickness="0"
-        WindowStartupLocation="CenterScreen" SizeToContent="Width">
+        WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
 
@@ -112,36 +112,36 @@
                 <Button Margin="0,106,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="HomeMenu_Click">
                     <Grid Width="190" Height="26">
                         <materialDesign:PackIcon Kind="Home" VerticalAlignment="Center" Margin="10,-3,0,0" Height="29" Width="29"/>
-                        <TextBlock HorizontalAlignment="Right" Text="Kezdőlap" FontSize="17" FontFamily="Champagne &amp; Limousines" Margin="0,6,56,-2" RenderTransformOrigin="1.221,0.667" Width="76"/>
+                        <TextBlock HorizontalAlignment="Right" FontWeight="Bold" Text="Kezdőlap" FontSize="17" FontFamily="Champagne &amp; Limousines" Margin="0,6,56,-2" RenderTransformOrigin="1.221,0.667" Width="76"/>
                     </Grid>
                 </Button>
                 <Button Margin="0,147,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="TransfersMenu_Click">
                     <Grid Width="190" Height="33">
                         <materialDesign:PackIcon Kind="Dollar" VerticalAlignment="Center" Margin="10,2,0,2" Height="29" Width="29"/>
-                        <TextBlock HorizontalAlignment="Left" FontSize="17" Text="Utalások" FontFamily="Champagne &amp; Limousines" Margin="58,10,0,2" RenderTransformOrigin="1.221,0.667" Width="77"/>
+                        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="17" Text="Utalások" FontFamily="Champagne &amp; Limousines" Margin="58,10,0,2" RenderTransformOrigin="1.221,0.667" Width="77"/>
                     </Grid>
                 </Button>
                 <Button Margin="0,188,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="FamilyMenu_Click">
                     <Grid Width="190" Height="33">
                         <materialDesign:PackIcon Kind="Family" VerticalAlignment="Center" Height="29" Width="30" Margin="10,0,0,4"/>
-                        <TextBlock HorizontalAlignment="Center" FontSize="17" Text="Család" FontFamily="Champagne &amp; Limousines" Margin="58,10,66,6" RenderTransformOrigin="1.221,0.667" Width="66"/>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="17" Text="Család" FontFamily="Champagne &amp; Limousines" Margin="58,10,66,6" RenderTransformOrigin="1.221,0.667" Width="66"/>
                     </Grid>
                 </Button>
                 <Button Margin="0,224,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200" Focusable="False" Click="HistoryMenu_Click">
                     <Grid Width="190" Height="31">
                         <materialDesign:PackIcon Kind="History" VerticalAlignment="Center" Margin="10,2,0,0" Height="29" Width="29"/>
-                        <TextBlock HorizontalAlignment="Center" FontSize="17" Text="Számlatörténet" FontFamily="Champagne &amp; Limousines" Margin="58,10,0,1" RenderTransformOrigin="1.221,0.667" Width="132"/>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="17" Text="Számlatörténet" FontFamily="Champagne &amp; Limousines" Margin="58,10,0,1" RenderTransformOrigin="1.221,0.667" Width="132"/>
                     </Grid>
                 </Button>
                 <Button Margin="0,265,0,0" Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Height="41" Foreground="{DynamicResource Third}" VerticalAlignment="Top" Click="SettingsMenu_Click" HorizontalAlignment="Left" Width="200" Focusable="False">
                     <Grid Width="190" Height="28">
                         <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" Margin="10,0,0,-1" Height="29" Width="29"/>
-                        <TextBlock HorizontalAlignment="Center" FontSize="17" Text="Beállítások" FontFamily="Champagne &amp; Limousines" Margin="58,5,26,5" RenderTransformOrigin="1.221,0.667" Width="106"/>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" FontSize="17" Text="Beállítások" FontFamily="Champagne &amp; Limousines" Margin="58,5,26,5" RenderTransformOrigin="1.221,0.667" Width="106"/>
                     </Grid>
                 </Button>
 
                 <Button Cursor="Hand" Background="Transparent" BorderBrush="{x:Null}" Foreground="{DynamicResource Third}"   HorizontalAlignment="Left" Width="51" Focusable="False" VerticalAlignment="Bottom" Click="LogoutButton_Click">
-                    <materialDesign:PackIcon Kind="Logout" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44" Width="50"/>
+                    <materialDesign:PackIcon Kind="Logout" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44" Width="50"/>
                 </Button>
 
             </Grid>
