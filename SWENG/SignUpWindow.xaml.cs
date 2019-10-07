@@ -17,12 +17,12 @@ using System.Windows.Shapes;
 namespace SWENG
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for SignUpWindow.xaml
     /// </summary>
-    public partial class LoginWindow : MetroWindow
+    public partial class SignUpWindow : MetroWindow
     {
         static string Key { get; set; } = "A!9HHhi%XjjYY4YP2@Nob009X";
-        public LoginWindow()
+        public SignUpWindow()
         {
             InitializeComponent();
         }
@@ -32,7 +32,7 @@ namespace SWENG
         {
             if (e.Key == System.Windows.Input.Key.Enter)
             {
-                LoginButton_Click(sender, e);
+                SignUpButton_Click(sender, e);
             }
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -41,7 +41,7 @@ namespace SWENG
         }
 
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
             System.IO.StreamReader reader = System.IO.File.OpenText(@"..\..\..\db1.txt");
             string line;
@@ -54,25 +54,22 @@ namespace SWENG
                 string path = null;
                 foreach (string item in items)
                 {
+
                     path = item;
                     System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db1.txt", true);
                     file.WriteLine(item);
                 }
             }
 
-            //PasswordTextBox.Text = Encrypt(PasswordTextBox.Text);
-            //PasswordTextBox.Text = Decrypt(PasswordTextBox.Text);
-
-            MainWindow window = new MainWindow();
+            LoginWindow window = new LoginWindow();
             window.Show();
             this.Close();
         }
-        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            SignUpWindow window = new SignUpWindow();
+            LoginWindow window = new LoginWindow();
             window.Show();
             this.Close();
-
         }
         //private void GenerateButton_Click(object sender, RoutedEventArgs e)
         //{
@@ -93,10 +90,7 @@ namespace SWENG
         //            file.WriteLine(item);
         //        }
         //    }
-        //    //HashPasswordTextBox.Text = Encrypt(PasswordTextBox.Text);
-        //    //OriginalPasswordTextBox.Text = Decrypt(HashPasswordTextBox.Text);
         //}
-
 
 
         public static string Encrypt(string text)
@@ -139,6 +133,23 @@ namespace SWENG
         }
 
         #region textboxes
+        private void NameTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            NameTextBox.Foreground = Brushes.Black;
+            if (NameTextBox.Text.Equals("Name"))
+            {
+                NameTextBox.Text = "";
+            }
+        }
+        private void NameTextBox_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (NameTextBox.Text.Equals(""))
+            {
+                NameTextBox.Foreground = Brushes.LightGray;
+                NameTextBox.Text = "Name";
+            }
+        }
+
         private void IDTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             IDTextBox.Foreground = Brushes.Black;
@@ -149,7 +160,7 @@ namespace SWENG
         }
         private void IDTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if(IDTextBox.Text.Equals(""))
+            if (IDTextBox.Text.Equals(""))
             {
                 IDTextBox.Foreground = Brushes.LightGray;
                 IDTextBox.Text = "Identifier";
@@ -187,6 +198,23 @@ namespace SWENG
             {
                 PasswordTextBox.Foreground = Brushes.LightGray;
                 PasswordTextBox.Text = "Password";
+            }
+        }
+
+        private void PasswordAgainTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            PasswordAgainTextBox.Foreground = Brushes.Black;
+            if (PasswordAgainTextBox.Text.Equals("Password Again"))
+            {
+                PasswordAgainTextBox.Text = "";
+            }
+        }
+        private void PasswordAgainTextBox_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (PasswordAgainTextBox.Text.Equals(""))
+            {
+                PasswordAgainTextBox.Foreground = Brushes.LightGray;
+                PasswordAgainTextBox.Text = "Password Again";
             }
         }
         #endregion

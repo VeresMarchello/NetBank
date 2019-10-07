@@ -1,5 +1,5 @@
 ﻿<Controls:MetroWindow
-    xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SWENG.LoginWindow"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SWENG.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,8 +7,10 @@
         xmlns:local="clr-namespace:SWENG"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        NonActiveWindowTitleBrush="DarkGray"
         WindowTitleBrush="{DynamicResource Primary}"   
         Background="{DynamicResource Primary}"
+        MouseDown="Window_MouseDown"
         BorderThickness="0"
         ResizeMode="NoResize"
         Title="Login" Height="450" Width="800" WindowStartupLocation="CenterScreen">
@@ -23,12 +25,50 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                </Trigger>
+                
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
 
-    <Grid>
-        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="255,80,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
-        <materialDesign:PackIcon Kind="PersonOutline" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="263,89,0,298" Height="34" Width="34"/>
-        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="50" Margin="383,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
+    <Grid x:Name="Grid">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                <GradientStop Color="DarkGreen" Offset="0.1" />
+                <GradientStop Color="Green" Offset="0.7" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="260,54,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
+        <materialDesign:PackIcon Kind="Identifier" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="268,62,0,325" Height="34" Width="34"/>
+        <TextBox x:Name="IDTextBox" GotKeyboardFocus="IDTextBox_GotKeyboardFocus" LostKeyboardFocus="IDTextBox_LostFocus" Text="Identifier" FontWeight="Bold" Foreground="LightGray" KeyDown="TextBox_KeyDown" HorizontalAlignment="Left" Height="50" Margin="346,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="260,124,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
+        <materialDesign:PackIcon Kind="ConfirmationNumber" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="268,132,0,255" Height="34" Width="34"/>
+        <TextBox x:Name="BankAccountNumberTextBox" GotKeyboardFocus="BankAccountNumberTextBox_GotKeyboardFocus" LostKeyboardFocus="BankAccountNumberTextBox_LostKeyboardFocus" Text="Bank Account Number" FontWeight="Bold" Foreground="LightGray" KeyDown="TextBox_KeyDown" HorizontalAlignment="Left" Height="50" Margin="346,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+
+        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="260,196,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
+        <materialDesign:PackIcon Kind="LockOpenOutline" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="268,204,0,183" Height="34" Width="34"/>
+        <TextBox x:Name="PasswordTextBox" GotKeyboardFocus="PasswordTextBox_GotKeyboardFocus" LostKeyboardFocus="PasswordTextBox_LostKeyboardFocus" Text="Password" FontWeight="Bold" Foreground="LightGray" KeyDown="TextBox_KeyDown" HorizontalAlignment="Left" Height="50" Margin="346,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="25"/>
@@ -36,22 +76,15 @@
             </TextBox.Resources>
         </TextBox>
 
-        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="255,152,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
-        <materialDesign:PackIcon Kind="LockOpenOutline" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="263,161,0,226" Height="34" Width="34"/>
-        <TextBox x:Name="HashPasswordTextBox" HorizontalAlignment="Left" Height="50" Margin="383,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
-            <TextBox.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="25"/>
-                </Style>
-            </TextBox.Resources>
-        </TextBox>
+        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="260,268,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
+        <materialDesign:PackIcon Kind="LoginVariant"  Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="268,276,0,111" Height="34" Width="34"/>
+        <Button x:Name="LoginButton" Cursor="Hand" Background="{DynamicResource Third}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" BorderThickness="0" Margin="346,268,0,0" VerticalAlignment="Top" Width="192" Height="50" Click="LoginButton_Click"/>
+        <Label Content="Login" Cursor="Hand" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Foreground="{DynamicResource Primary}" IsHitTestVisible="False" Margin="346,268,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="192" Height="50"/>
 
-        <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="255,224,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
-        <materialDesign:PackIcon Kind="LoginVariant"  Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="263,233,0,154" Height="34" Width="34"/>
-        <Button x:Name="LoginButton" Cursor="Hand" Content="Login" Background="{DynamicResource Third}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" BorderThickness="0" Margin="383,224,0,0" VerticalAlignment="Top" Width="192" Height="50" Click="LoginButton_Click"/>
-        <Label Content="Login" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Foreground="{DynamicResource Primary}" IsHitTestVisible="False" Margin="383,224,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="192" Height="50"/>
+        <Button x:Name="SignUpButton" Cursor="Hand" Margin="301,349,0,0" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Foreground="{DynamicResource Third}" HorizontalAlignment="Left" Width="192" Height="30" RenderTransformOrigin="0.5,0.5" Click="SignUpButton_Click"/>
+        <Label Content="Sign Up" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Foreground="{DynamicResource Third}" IsHitTestVisible="False" Margin="301,349,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="192" Height="30"/>
 
-        <Button Content="Sign Up" Margin="301,307,0,0" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Foreground="{DynamicResource Third}" HorizontalAlignment="Left" Width="192" Height="30" RenderTransformOrigin="0.5,0.5"/>
+
 
         <!--<Button x:Name="GenerateButton" Content="Generate" HorizontalAlignment="Left" Margin="619,237,0,0" VerticalAlignment="Top" Width="68" Height="49" Click="GenerateButton_Click"/>-->
 
