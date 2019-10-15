@@ -7,13 +7,9 @@
 
         <ResourceDictionary>
 
-            <Color x:Key="SuzukiBlue" A="255" R="8" G="80" B="118"/>
-            <Color x:Key="SuzukiRed" A="255" R="226" G="14" B="16"/>
-            <Color x:Key="White" A="255" R="255" G="255" B="255"/>
-            
             <SolidColorBrush x:Key="Primary" Color="DarkGreen"/>
-            <SolidColorBrush x:Key="Secondary" Color="{DynamicResource SuzukiRed}"/>
-            <SolidColorBrush x:Key="Third" Color="{DynamicResource White}"/>
+            <SolidColorBrush x:Key="Secondary" Color="Yellow"/>
+            <SolidColorBrush x:Key="Third" Color="White"/>
 
             <ResourceDictionary.MergedDictionaries>
 

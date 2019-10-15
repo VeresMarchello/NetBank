@@ -84,9 +84,5 @@
         <Button x:Name="SignUpButton" Cursor="Hand" Margin="301,349,0,0" VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Foreground="{DynamicResource Third}" HorizontalAlignment="Left" Width="192" Height="30" RenderTransformOrigin="0.5,0.5" Click="SignUpButton_Click"/>
         <Label Content="Sign Up" FontWeight="Bold" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Foreground="{DynamicResource Third}" IsHitTestVisible="False" Margin="301,349,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="192" Height="30"/>
 
-
-
-        <!--<Button x:Name="GenerateButton" Content="Generate" HorizontalAlignment="Left" Margin="619,237,0,0" VerticalAlignment="Top" Width="68" Height="49" Click="GenerateButton_Click"/>-->
-
     </Grid>
 </Controls:MetroWindow>

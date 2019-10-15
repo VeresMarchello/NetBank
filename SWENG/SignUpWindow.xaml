@@ -54,7 +54,7 @@
             </TextBox.Resources>
         </TextBox>
 
-        
+
         <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="468,120,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
         <materialDesign:PackIcon Kind="LockOpenOutline" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="476,128,0,259" Height="34" Width="34"/>
         <TextBox x:Name="PasswordTextBox" KeyDown="TextBox_KeyDown" GotKeyboardFocus="PasswordTextBox_GotKeyboardFocus" LostKeyboardFocus="PasswordTextBox_LostKeyboardFocus" Text="Password" FontWeight="Bold" Foreground="LightGray" HorizontalAlignment="Left" Height="50" Margin="554,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
@@ -75,7 +75,7 @@
             </TextBox.Resources>
         </TextBox>
 
-        
+
         <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="48,120,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
         <materialDesign:PackIcon Kind="Identifier" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="56,128,0,259" Height="34" Width="34"/>
         <TextBox x:Name="IDTextBox" KeyDown="TextBox_KeyDown" GotKeyboardFocus="IDTextBox_GotKeyboardFocus" LostKeyboardFocus="IDTextBox_LostFocus" Text="Identifier" FontWeight="Bold" Foreground="LightGray" HorizontalAlignment="Left" Height="50" Margin="134,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
@@ -85,7 +85,7 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        
+
         <Ellipse Fill="{DynamicResource Third}" HorizontalAlignment="Left" Margin="48,192,0,0" VerticalAlignment="Top" Height="50" Width="50"/>
         <materialDesign:PackIcon Kind="ConfirmationNumber" Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="56,200,0,187" Height="34" Width="34"/>
         <TextBox x:Name="BankAccountNumberTextBox" KeyDown="TextBox_KeyDown" GotKeyboardFocus="BankAccountNumberTextBox_GotKeyboardFocus" LostKeyboardFocus="BankAccountNumberTextBox_LostKeyboardFocus" Text="Bank Account Number" FontWeight="Bold" Foreground="LightGray" HorizontalAlignment="Left" Height="50" Margin="134,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="192" BorderBrush="{x:Null}">
@@ -103,6 +103,8 @@
 
         <Button x:Name="GoBackButton" Cursor="Hand" HorizontalAlignment="Left" Margin="10,361,0,0" VerticalAlignment="Top" Height="50" Width="50" Click="GoBackButton_Click"/>
         <materialDesign:PackIcon Kind="ArrowBack"  Foreground="{DynamicResource Primary}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="18,369,0,18" Height="34" Width="34"/>
-        
+        <RadioButton x:Name="ParentRadioButton" Content="Parent" FontWeight="Bold" Foreground="{DynamicResource Third}" HorizontalAlignment="Left" Margin="554,315,0,0" VerticalAlignment="Top" Height="20" Width="108"/>
+        <RadioButton x:Name="ChildRadioButton" Content="Child" FontWeight="Bold" Foreground="{DynamicResource Third}" HorizontalAlignment="Left" Margin="662,315,0,0" VerticalAlignment="Top" Height="20" Width="108"/>
+
     </Grid>
 </Controls:MetroWindow>

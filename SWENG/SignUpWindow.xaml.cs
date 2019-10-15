@@ -21,13 +21,12 @@ namespace SWENG
     /// </summary>
     public partial class SignUpWindow : MetroWindow
     {
-        static string Key { get; set; } = "A!9HHhi%XjjYY4YP2@Nob009X";
         public SignUpWindow()
         {
             InitializeComponent();
         }
 
-
+        #region KeyDowns
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)
@@ -39,59 +38,45 @@ namespace SWENG
         {
             Keyboard.ClearFocus();
         }
+        #endregion
 
-
+        #region Button_Clicks
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-            System.IO.StreamReader reader = System.IO.File.OpenText(@"..\..\..\db1.txt");
-            string line;
-            while ((line = reader.ReadLine()) != null)
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db1.txt", true))
             {
-                String[] items = line.Split('\t');
-                int myInteger = int.Parse(items[1]);   // Here's your integer.
 
-                // Now let's find the path.
-                string path = null;
-                foreach (string item in items)
+                file.Write(NameTextBox.Text);
+                file.WriteLine("");
+                file.Write(IDTextBox.Text);
+                file.WriteLine("");
+                file.Write(BankAccountNumberTextBox.Text);
+                file.WriteLine("");
+                if (PasswordTextBox.Text == PasswordAgainTextBox.Text)
                 {
 
-                    path = item;
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db1.txt", true);
-                    file.WriteLine(item);
+                    file.Write(Encrypt(PasswordAgainTextBox.Text));
                 }
+                file.WriteLine("");
+                file.WriteLine("\n");
             }
 
             LoginWindow window = new LoginWindow();
             window.Show();
             this.Close();
         }
+
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow window = new LoginWindow();
             window.Show();
             this.Close();
         }
-        //private void GenerateButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    System.IO.StreamReader reader = System.IO.File.OpenText(@"..\..\..\db1.txt");
-        //    string line;
-        //    while ((line = reader.ReadLine()) != null)
-        //    {
-        //        String[] items = line.Split('\t');
-        //        int myInteger = int.Parse(items[1]);   // Here's your integer.
+        
+        #endregion
 
-        //        // Now let's find the path.
-        //        string path = null;
-        //        foreach (string item in items)
-        //        {
-
-        //            path = item;
-        //            System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db1.txt", true);
-        //            file.WriteLine(item);
-        //        }
-        //    }
-        //}
-
+        #region Encoding
+        static string Key { get; set; } = "A!9HHhi%XjjYY4YP2@Nob009X";
 
         public static string Encrypt(string text)
         {
@@ -131,8 +116,9 @@ namespace SWENG
                 }
             }
         }
+        #endregion
 
-        #region textboxes
+        #region Textboxes
         private void NameTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             NameTextBox.Foreground = Brushes.Black;
@@ -218,5 +204,7 @@ namespace SWENG
             }
         }
         #endregion
+
+        
     }
 }

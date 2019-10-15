@@ -13,5 +13,6 @@ namespace SWENG
     /// </summary>
     public partial class App : Application
     {
+        string adat2;
     }
 }

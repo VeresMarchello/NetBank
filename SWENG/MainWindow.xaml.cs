@@ -22,11 +22,28 @@ namespace SWENG
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        public static MainWindow Main_Window; 
+
         public MainWindow()
         {
             InitializeComponent();
+            Main_Window = this;
+
+            String[] data = System.IO.File.ReadAllLines(@"..\..\..\db1.txt");
+            String[] name = System.IO.File.ReadAllLines(@"..\..\..\db2.txt");
+            String[] transfers = System.IO.File.ReadAllLines(@"..\..\..\db4.txt");
+
+            for (int i = 0; i < name.Length; i++)
+            {
+                Namelabel.Content = name[i];
+                var yourtext = name[i];
+                var firstcharofstring = System.Globalization.StringInfo.GetNextTextElement(yourtext, 0);
+                ShortNamelabel.Content = firstcharofstring;
+            }
+
         }
 
+        #region Button_Clicks
         private void HomeMenu_Click(object sender, RoutedEventArgs e)
         {
             _NavigationFrame.Navigate(new HomePage());
@@ -54,6 +71,8 @@ namespace SWENG
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
+            System.IO.File.WriteAllText(@"..\..\..\db2.txt", String.Empty);
+
             LoginWindow window = new LoginWindow();
             window.Show();
             this.Close();
@@ -76,7 +95,11 @@ namespace SWENG
 
             StateClosed = !StateClosed;
         }
+        #endregion
 
-        
+        private void MetroWindow_Closed(object sender, EventArgs e)
+        {
+            System.IO.File.WriteAllText(@"..\..\..\db2.txt", String.Empty);
+        }
     }
 }

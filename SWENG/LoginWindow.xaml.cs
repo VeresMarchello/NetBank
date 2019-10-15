@@ -21,13 +21,13 @@ namespace SWENG
     /// </summary>
     public partial class LoginWindow : MetroWindow
     {
-        static string Key { get; set; } = "A!9HHhi%XjjYY4YP2@Nob009X";
+
         public LoginWindow()
         {
             InitializeComponent();
         }
 
-
+        #region KeyDowns
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)
@@ -39,33 +39,28 @@ namespace SWENG
         {
             Keyboard.ClearFocus();
         }
+        #endregion
 
-
+        #region Button_Clicks
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            System.IO.StreamReader reader = System.IO.File.OpenText(@"..\..\..\db1.txt");
-            string line;
-            while ((line = reader.ReadLine()) != null)
-            {
-                String[] items = line.Split('\t');
-                int myInteger = int.Parse(items[1]);   // Here's your integer.
+            String[] adat = System.IO.File.ReadAllLines(@"..\..\..\db1.txt");
 
-                // Now let's find the path.
-                string path = null;
-                foreach (string item in items)
+            for (int i = 0; i < adat.Length - 3; i++)
+            {
+                if (IDTextBox.Text == adat[i + 1] && BankAccountNumberTextBox.Text == adat[i + 2] && Encrypt(PasswordTextBox.Text) == adat[i + 3])
                 {
-                    path = item;
-                    System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db1.txt", true);
-                    file.WriteLine(item);
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db2.txt", true))
+                    {
+                        file.WriteLine(adat[i]);
+                    }
+                    MainWindow window = new MainWindow();
+                    window.Show();
+                    this.Close();
+                    break;
                 }
             }
 
-            //PasswordTextBox.Text = Encrypt(PasswordTextBox.Text);
-            //PasswordTextBox.Text = Decrypt(PasswordTextBox.Text);
-
-            MainWindow window = new MainWindow();
-            window.Show();
-            this.Close();
         }
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
@@ -74,30 +69,11 @@ namespace SWENG
             this.Close();
 
         }
-        //private void GenerateButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    System.IO.StreamReader reader = System.IO.File.OpenText(@"..\..\..\db1.txt");
-        //    string line;
-        //    while ((line = reader.ReadLine()) != null)
-        //    {
-        //        String[] items = line.Split('\t');
-        //        int myInteger = int.Parse(items[1]);   // Here's your integer.
 
-        //        // Now let's find the path.
-        //        string path = null;
-        //        foreach (string item in items)
-        //        {
+        #endregion
 
-        //            path = item;
-        //            System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\db1.txt", true);
-        //            file.WriteLine(item);
-        //        }
-        //    }
-        //    //HashPasswordTextBox.Text = Encrypt(PasswordTextBox.Text);
-        //    //OriginalPasswordTextBox.Text = Decrypt(HashPasswordTextBox.Text);
-        //}
-
-
+        #region Encoding
+        static string Key { get; set; } = "A!9HHhi%XjjYY4YP2@Nob009X";
 
         public static string Encrypt(string text)
         {
@@ -137,8 +113,9 @@ namespace SWENG
                 }
             }
         }
+        #endregion
 
-        #region textboxes
+        #region Textboxes
         private void IDTextBox_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
             IDTextBox.Foreground = Brushes.Black;
@@ -149,7 +126,7 @@ namespace SWENG
         }
         private void IDTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if(IDTextBox.Text.Equals(""))
+            if (IDTextBox.Text.Equals(""))
             {
                 IDTextBox.Foreground = Brushes.LightGray;
                 IDTextBox.Text = "Identifier";
