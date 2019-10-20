@@ -10,6 +10,7 @@
         NonActiveWindowTitleBrush="DarkGray"
         WindowTitleBrush="{DynamicResource Primary}"   
         Background="{DynamicResource Primary}"
+        Icon="Pictures/BankLogo.png"
         MouseDown="Window_MouseDown"
         BorderThickness="0"
         ResizeMode="NoResize"

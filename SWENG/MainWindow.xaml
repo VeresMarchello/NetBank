@@ -13,7 +13,10 @@
         NonActiveWindowTitleBrush="DarkGray"
         WindowTitleBrush="{DynamicResource Primary}"
         Closed="MetroWindow_Closed"
+        Icon="Pictures/BankLogo.png"
         BorderThickness="0"
+        LocationChanged="MetroWindow_LocationChanged"
+        SizeChanged="MetroWindow_SizeChanged"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>

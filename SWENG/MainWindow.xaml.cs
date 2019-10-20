@@ -22,7 +22,7 @@ namespace SWENG
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        public static MainWindow Main_Window; 
+        public static MainWindow Main_Window;
 
         public MainWindow()
         {
@@ -100,6 +100,29 @@ namespace SWENG
         private void MetroWindow_Closed(object sender, EventArgs e)
         {
             System.IO.File.WriteAllText(@"..\..\..\db2.txt", String.Empty);
+        }
+
+        private void MetroWindow_LocationChanged(object sender, EventArgs e)
+        {
+            if (!StateClosed)
+            {
+                Storyboard sb = this.FindResource("CloseMenu") as Storyboard;
+                sb.Begin();
+                StateClosed = !StateClosed;
+            }
+
+        }
+
+        private void MetroWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            bool maximized = this.WindowState == System.Windows.WindowState.Maximized;
+
+            if (maximized && StateClosed)
+            {
+                Storyboard sb = this.FindResource("OpenMenu") as Storyboard;
+                sb.Begin();
+                StateClosed = !StateClosed;
+            }
         }
     }
 }
