@@ -6,27 +6,27 @@
       xmlns:local="clr-namespace:SWENG"
       mc:Ignorable="d"
       Title="Home"
-      Height="761" Width="1148"
       Background="{DynamicResource Third}">
+    
+        <Grid Height="761" Width="1148">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        
-        <Label x:Name="Welcomelabel" Content="Welcome X Y" HorizontalAlignment="Left" FontSize="30" Margin="10,17,0,0" VerticalAlignment="Top" Height="52" Width="774"/>
-        <Label x:Name="IDlabel" Content="Label" HorizontalAlignment="Left" Margin="32,103,0,0" VerticalAlignment="Top" Width="318"/>
-        <Label x:Name="BankAccountNumberlabel" Content="Label" HorizontalAlignment="Left" Margin="38,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="180">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.069"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Label x:Name="Cardlabel" Content="Label" HorizontalAlignment="Left" Margin="64,74,0,0" VerticalAlignment="Top" Width="261"/>
-        <ListBox x:Name="TransferslistBox" HorizontalAlignment="Left" Height="142" Margin="965,103,0,0" VerticalAlignment="Top" Width="166"/>
-    </Grid>
+            <Label x:Name="Welcomelabel" Content="Welcome X Y" HorizontalAlignment="Left" FontSize="30" Margin="10,17,0,0" VerticalAlignment="Top" Height="52" Width="774"/>
+            <Label x:Name="IDlabel" Content="Label" HorizontalAlignment="Left" Margin="32,103,0,0" VerticalAlignment="Top" Width="261"/>
+            <Label x:Name="BankAccountNumberlabel" Content="Label" HorizontalAlignment="Left" Margin="32,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="261">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.069"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="Cardlabel" Content="Label" HorizontalAlignment="Left" Margin="32,74,0,0" VerticalAlignment="Top" Width="261"/>
+            <ListBox x:Name="TransferslistBox" HorizontalAlignment="Left" Height="142" Margin="965,103,0,0" VerticalAlignment="Top" Width="166"/>
+        </Grid>
+
 </Page>
