@@ -8,7 +8,7 @@
       Title="Home"
       Background="{DynamicResource Third}">
     
-        <Grid Height="761" Width="1148">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
